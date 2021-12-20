@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import EachArticle from ''
+import EachArticle from './EachArticle'
 class MyArticles extends React.Component {
 state = {
     articles : [],
@@ -18,7 +18,8 @@ state = {
     render() { 
         return <div>
                 hello
-               {( this.state.articles && <EachArticle articles={this.articles}/>)}
+               { this.state.articles && (this.state.articles.map((article,i) => <EachArticle key={i} article={article}/>))}
+
         </div>;
     }
 }
