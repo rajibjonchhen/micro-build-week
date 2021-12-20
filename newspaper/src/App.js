@@ -4,12 +4,21 @@ import "./MyCssCategory.css";
 import MyCategory from "./components/MyCategory";
 import "./App.css";
 
-function App() {
-  return (
-    <div className="App">
-      <MyCategory />
-    </div>
-  );
-}
+export default class App extends React.Component {
+  state = {
+    searchQuery: "",
+  };
 
-export default App;
+  setSearchQuery = (search) => {
+    this.setState({ searchQuery: search });
+    console.log(search);
+  };
+
+  render() {
+    return (
+      <div className="App">
+        <MyCategory setSearchQuery={this.setSearchQuery} />
+      </div>
+    );
+  }
+}
