@@ -1,0 +1,13 @@
+:root {
+  --grey-text: grey;
+}
+
+#nav-category li > a {
+  color: var(--grey-text);
+  padding: 8px;
+}
+
+#nav-category li > a:hover {
+  text-decoration: underline !important;
+  color: var(--grey-text);
+}
