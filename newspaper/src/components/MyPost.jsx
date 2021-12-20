@@ -1,41 +1,53 @@
-import {useState,useEffect} from "react";
+import { useState, useEffect } from "react";
 import { Card } from "react-bootstrap";
-import React from 'react'
+import React from "react";
 
 export default function MyPost() {
-    const [data, setData]=useState([])
-    const [isLoading, setIsLoading]=useState(true)
-const getData=async=>{
-    try {let resp= await fetch(
-        " https://newsapi.org/v2/top-headlines?country=us&apiKey=31873307c9984b4c976a5c43d2ad6ebf"
-      )
-      if(resp.ok){
-          let files= await resp.json()
-          setData(files.articles)
-          setIsLoading(false)
-          console.log(data)
-      }else {console.log('fetching error')}
-        
+  const [data, setData] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+
+  const getData = async () => {
+    try {
+      let resp = await fetch(
+        "https://newsapi.org/v2/top-headlines?country=us&apiKey=31873307c9984b4c976a5c43d2ad6ebf"
+      );
+      if (resp.ok) {
+        let { articles } = await resp.json();
+        setData(articles);
+        setIsLoading(false);
+        console.log(data);
+      } else {
+        console.log("fetching error");
+      }
     } catch (error) {
-        console.log(error)
+      console.log(error);
     }
-}
-useEffect(()=>{getData()},[])
-    return (
-        <div className="featureposts">
-          {isLoading? (<>loading...</>):(<>
-            {<Card>
-          <Card.Img variant="top" src="holder.js/100px180" />
-          <Card.Body>
-            <Card.Title>lorem ipsum</Card.Title>
-            <Card.Text></Card.Text>
-            <h6>continue reading...</h6>
-          </Card.Body>
-        </Card>}
-        </>)}
-      </div>
-    )
+  };
+
+  useEffect(() => {
+    getData();
+  });
+
+  return (
+    <>
+      {isLoading ? (
+        <span className="sr-only">Loading...</span>
+      ) : (
+        data.map((post) => (
+            <Card className="feature-news" >
+              <Card.Img className="feature-image"variant="top" src={post.urlToImage} />
+            <Card.Body className="feature-text">
+              <Card.Title >{post.title}</Card.Title>
+              <Card.Text >{post.author}</Card.Text>
+              <h6 >{post.description}</h6>
+              <h6  >{post.url}</h6>
+           </Card.Body>
+          </Card>
+        ))
+      )}
+    </>
+  );
 }
 
 
- 
+

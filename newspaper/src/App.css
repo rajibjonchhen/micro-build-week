@@ -36,8 +36,15 @@
     transform: rotate(360deg);
   }
 }
-.featureposts{
-  width:50vw;
-  margin-top: 50px;
-  margin-left: 50px;
+.feature-posts {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+}
+
+.feature-news {
+	margin: 20px 20px !important;
+	max-height: 400px;
+	overflow: hidden;
+	padding: 3px;
 }
