@@ -10,7 +10,7 @@ class EachArticle extends React.Component {
            
             <Card className='text-left mt-4' border="light">
             <Card.Body>
-              <span className="h2">{this.props.article.title}</span>
+              <p className="h2">{this.props.article.title}</p>
               <span className="small m-2">{format(parseISO(this.props.article.publishedAt),'MMMM do yyyy')} {this.props.article.author}</span>
               <p className="mt-3" style={{textOverflow: 'ellipsis', whiteSpace: 'nowrap', overflow: 'hidden' }}>
               {this.props.article.description}

@@ -31,7 +31,8 @@ state = {
         return <Container>
            <Row>    
                    <Col sm={12} md={10} lg={8}>
-                <p className="h2 text-left"> {this.props.searchQuery.toUpperCase()} Section</p>
+                <p className="h2 text-left"> Top Stories from {this.props.searchQuery}</p>
+                <hr/>
                 {/* loader and error handling */}
                 { this.state.isLoading && (<div>
              <Spinner animation="grow" variant="primary" />
@@ -50,7 +51,6 @@ state = {
                </Alert>
               }
                 {/* loader and error handling ended */}
-              <hr/>
                { this.state.articles && (this.state.articles.map((article,i) => <EachArticle key={i} article={article}/>))}
 
                   </Col>
