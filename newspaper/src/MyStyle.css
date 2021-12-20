@@ -1,0 +1,11 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display&family=Sofia&family=Varela&display=swap");
+
+:root {
+  --font-h1: "Playfair Display", serif;
+}
+
+h1 {
+  font-family: var(--font-h1);
+  font-size: 32px;
+  font-weight: bolder;
+}
