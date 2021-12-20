@@ -1,33 +1,29 @@
+import { format, parseISO } from 'date-fns';
 import React, { Component } from 'react';
 import {Card,} from 'react-bootstrap'
+import { Ellipsis } from 'react-bootstrap/esm/PageItem';
 class EachArticle extends React.Component {
-    render() { 
+
+
+    render() {
         return <>{
            
-            <Card className='mt-4' border="dark" style={{ width: '58rem' }}>
-            <Card.Header>{this.props.article.source.name} {this.props.article.author}</Card.Header>
+            <Card className='text-left mt-4' border="light">
             <Card.Body>
-              <Card.Title>{this.props.article.title}</Card.Title>
-              <Card.Text>
+              <span className="h2">{this.props.article.title}</span>
+              <span className="small m-2">{format(parseISO(this.props.article.publishedAt),'MMMM do yyyy')} {this.props.article.author}</span>
+              <p className="mt-3" style={{textOverflow: 'ellipsis', whiteSpace: 'nowrap', overflow: 'hidden' }}>
+              {this.props.article.description}
+              </p>
+            <hr/>
+             <p>
               {this.props.article.content}
-              </Card.Text>
+              </p>
             </Card.Body>
           </Card>
-                // <div className="">
-
-                // <p className="h3">{</p>
-                // <span></span>
-                // <span></span>
-                // <p>
-                //     
-
-                // </p>
-                // </div>
-            
-           
-
-        }</>;
+              
+        }</>
     }
 }
  
-export default EachArticle;
+export default EachArticle
