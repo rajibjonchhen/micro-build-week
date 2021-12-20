@@ -9,3 +9,7 @@ h1 {
   font-size: 32px;
   font-weight: bolder;
 }
+
+nav {
+  border-bottom: 1px solid grey;
+}

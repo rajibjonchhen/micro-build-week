@@ -33,6 +33,7 @@ const MyNavBar = () => {
                     </Navbar.Collapse>
                 </div>
             </Container>
+           
         </Navbar>
     )
         
