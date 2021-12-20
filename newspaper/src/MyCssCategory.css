@@ -4,7 +4,9 @@
 
 #nav-category li > a {
   color: var(--grey-text);
-  padding: 8px;
+  padding: 20px;
+  display: inline;
+  text-transform: capitalize;
 }
 
 #nav-category li > a:hover {
