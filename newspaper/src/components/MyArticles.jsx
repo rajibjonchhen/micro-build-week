@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import EachArticle from './EachArticle'
-import {Container, Row, Col, Spinner, Alert} from 'react-bootstrap'
+import {Container, Row, Col, Spinner, Alert, Button} from 'react-bootstrap'
 import { compareAsc, format } from 'date-fns'
 class MyArticles extends React.Component {
 state = {
@@ -53,6 +53,12 @@ state = {
                 {/* loader and error handling ended */}
                { this.state.articles && (this.state.articles.map((article,i) => <EachArticle key={i} article={article}/>))}
 
+                  </Col>
+                </Row>
+                <Row>
+                  <Col className="text-left">
+                  <Button style={{borderRadius:"20px"}} variant="outline-primary">Older</Button>
+                  <Button className="ml-2" style={{borderRadius:"20px"}} variant="outline-primary">Newer</Button>
                   </Col>
                 </Row>
         </Container>

@@ -5,6 +5,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import MyFooter from './components/MyFooter';
 
 class App extends Component{
   state = {
@@ -22,6 +23,7 @@ setSearch
        <MyPostContainer/>
       */}
       <MyArticles searchQuery={this.state.searchQuery}/> 
+      <MyFooter/>
       </div>
     );
   }
