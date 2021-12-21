@@ -9,7 +9,7 @@ export default function MyPost() {
   const getData = async () => {
     try {
       let resp = await fetch(
-        "https://newsapi.org/v2/top-headlines?country=us&apiKey=31873307c9984b4c976a5c43d2ad6ebf"
+        "https://newsapi.org/v2/top-headlines?country=us&apiKey=0f004968c8634a11bc6de3a41b29c857"
       );
       if (resp.ok) {
         let { articles } = await resp.json();
@@ -34,7 +34,7 @@ export default function MyPost() {
         <span className="sr-only">Loading...</span>
       ) : (
         data.map((post) => (
-            <Card className="feature-news" >
+            <Card className="feature-news" style={{width:"20rem"} } >
               <Card.Img className="feature-image"variant="top" src={post.urlToImage} />
             <Card.Body className="feature-text">
               <Card.Title >{post.title}</Card.Title>
