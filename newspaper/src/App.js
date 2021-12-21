@@ -33,7 +33,7 @@ export default class App extends React.Component {
         <Row>
         <MyJumbotron />
         <MyPostContainer />
-          <MyArticles searchQuery={this.state.searchQuery || "business"} className="mt-5"/>
+          <MyArticles searchQuery={this.state.searchQuery || "the world"} className="mt-5"/>
           <SideBar />
         </Row>
         </Container>
