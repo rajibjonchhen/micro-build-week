@@ -5,7 +5,7 @@ import { compareAsc, format } from 'date-fns'
 class MyArticles extends React.Component {
 state = {
     articles : [],
-    search: this.props.searchQuery? this.props.searchQuery:"keyword",
+    search: this.props.searchQuery? this.props.searchQuery:"the world",
     isLoading:true,
     showError:false,
     errorMsg:"",
@@ -83,7 +83,7 @@ state = {
            <Row>    
                    <Col sm={12} md={10} lg={8}>
                      {/* Overall title of the article section */}
-                <p className="h2 text-left"> Top Stories from {this.props.searchQuery}</p>
+                <p className="h2 text-left"> Top Stories from {this.state.search}</p>
                 <hr/>
                 {/* loader multiple spinner for colorful spinner :-D */}
                 { this.state.isLoading && (<div>
