@@ -20,10 +20,9 @@ state = {
         let data = await response.json()
          
         if(data){
+          this.setState({isLoading:false})
           this.setState({articles:data.articles})
           this.setState({numberOfArticles:data.articles.length})
-          this.setState({isLoading:false})
-          console.log(this.state.numberOfArticles)
         } else {
           this.setState({isloading:false})
          this.setState({errorMsg:"error on loading articles"})
@@ -31,7 +30,6 @@ state = {
         }
 
        } catch (error) {
-         console.log(error)  
          this.setState({isloading:false})
          this.setState({errorMsg:error})
          this.setState({showError:true})
@@ -73,7 +71,7 @@ state = {
                     {/* error handling */}
               { this.state.showError === true &&
               <Alert variant="danger">
-                  {this.state.showError} Cannot display
+                  {this.state.showError} Errror on Loading articles Cannot display
                </Alert>
               }
                 {/* loader and error handling ended */}
