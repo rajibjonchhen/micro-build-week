@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
-import { Card } from "react-bootstrap";
+import { Card, Container, Row } from "react-bootstrap";
 import React from "react";
+import '../App.css'
 
 export default function MyPost() {
   const [data, setData] = useState([]);
@@ -30,11 +31,16 @@ export default function MyPost() {
 
   return (
     <>
-      {isLoading ? (
+      {/* {isLoading ? (
         <span className="sr-only">Loading...</span>
-      ) : (
+      ) : ( */}
+        <Container>
+       
+        <Row className="post-container row-cols-1 row-cols-sm-1 row-cols-md-2 row-cols-lg-3 px-3 ">
+          <>
+          {
         data.map((post) => (
-            <Card className="feature-news d-flex" style={{width:"20rem"} } >
+            <Card className="feature-news" style={{width:"20rem"} } >
               <Card.Img className="feature-image"variant="top" src={post.urlToImage} />
             <Card.Body className="feature-text">
               <Card.Title >{post.title}</Card.Title>
@@ -43,8 +49,16 @@ export default function MyPost() {
               <h6  >{post.url}</h6>
            </Card.Body>
           </Card>
+             
         ))
-      )}
+         } 
+
+
+</>
+         </Row>
+        
+    </Container>
+      {/* )} */}
     </>
   );
 }

@@ -72,7 +72,7 @@ class MyArticles extends React.Component {
     return (
       <Col sm={12} md={8} lg={8}>
         {/* Overall title of the article section */}
-        <p className="h2 text-left"> Top Stories from {this.state.searchQuery}</p>
+        <p className="h2 text-left"> Top Stories from {this.props.searchQuery}</p>
         <hr />
         {/* loader multiple spinner for colorful spinner :-D */}
         {this.state.isLoading && (

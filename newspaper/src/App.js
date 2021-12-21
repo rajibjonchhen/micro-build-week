@@ -8,7 +8,7 @@ import MyArticles from "./components/MyArticles";
 import MyFooter from "./components/MyFooter";
 import MyJumbotron from "./components/MyJumbotron";
 import SideBar from "./components/SideBar";
-import MyPostContainer from './components/MyPostContainer'
+import MyPost from './components/MyPost'
 import {Container, Row, Col} from 'react-bootstrap'
 import "./MyStyle.css";
 import "./App.css";
@@ -32,7 +32,7 @@ export default class App extends React.Component {
         <Container className="main d-flex mt-5">
         <Row>
         <MyJumbotron />
-        <MyPostContainer />
+        <MyPost />
           <MyArticles searchQuery={this.state.searchQuery || "the world"} className="mt-5"/>
           <SideBar />
         </Row>

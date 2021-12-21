@@ -48,6 +48,12 @@
 	padding: 3px;
 }
 
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+
 .jumbotron-img{
   width:250px;
 
@@ -60,7 +66,9 @@
 
 .post-container{
 height:450px;
-overflow:scroll;
+overflow-x: scroll;
+overflow-y: hidden;
 display: flex;
-
+flex-wrap: nowrap;
 }
+
