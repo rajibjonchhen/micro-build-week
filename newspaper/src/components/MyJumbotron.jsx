@@ -1,7 +1,6 @@
 import React from "react";
 import { Container, Jumbotron } from "react-bootstrap";
 import "./MyJumbotron.css";
-import SideBar from "../components/SideBar";
 
 export default class MyJumbotron extends React.Component {
   state = {
@@ -46,7 +45,6 @@ export default class MyJumbotron extends React.Component {
             </a>
           </p>
         </Jumbotron>
-        <SideBar></SideBar>
       </Container>
     );
   }
