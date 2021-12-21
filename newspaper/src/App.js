@@ -1,19 +1,24 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import MyNavBar from "./components/MyNavBar.jsx";
+import "./MyCssCategory.css";
+import MyCategory from "./components/MyCategory";
 import "./App.css";
-import "./MyStyle.css";
 
-function App() {
-  return (
-    <div className="App">
-      <MyNavBar />
-      {/*  <MyCategory/>
-     <MyJumbotron/>
-     <MyPostContainer/>
-     <MyArticles/> */}
-    </div>
-  );
+export default class App extends React.Component {
+  state = {
+    searchQuery: "",
+  };
+
+  setSearchQuery = (search) => {
+    this.setState({ searchQuery: search });
+    console.log(search);
+  };
+
+  render() {
+    return (
+      <div className="App">
+        <MyCategory setSearchQuery={this.setSearchQuery} />
+      </div>
+    );
+  }
 }
-
-export default App;
