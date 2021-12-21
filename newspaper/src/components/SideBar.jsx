@@ -1,10 +1,10 @@
 // import React from 'react'
-// import { Col } from "react-bootstrap";
+import { Col } from "react-bootstrap";
 
 const SideBar = () => {
   return (
-    <div>
-      <aside className="col-md-4 blog-sidebar">
+    <Col sm={12} md={4} lg={4}>
+      <aside className="blog-sidebar">
         <div className="p-3 mb-3 bg-light rounded">
           <h4 className="font-italic font-weight-bolder">About</h4>
           <p className="mb-3">
@@ -15,7 +15,7 @@ const SideBar = () => {
         </div>
         <div className="p-3">
           <h4 className="font-italic">Archives</h4>
-          <ol className="list-unstyled mb-0">
+          <ul className="list-unstyled mb-0">
             <li>
               <a href="/">March 2014</a>
             </li>
@@ -52,7 +52,7 @@ const SideBar = () => {
             <li>
               <a href="/">April 2013</a>
             </li>
-          </ol>
+          </ul>
         </div>
         <div className="p-3">
           <h4 className="font-italic">Elsewhere</h4>
@@ -69,7 +69,7 @@ const SideBar = () => {
           </ol>
         </div>
       </aside>
-    </div>
+    </Col>
   );
 };
 

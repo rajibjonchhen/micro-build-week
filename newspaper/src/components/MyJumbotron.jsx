@@ -34,7 +34,7 @@ export default class MyJumbotron extends React.Component {
           <h1 className="text-white font-italic display-4">
             {this.state.object1.title}
           </h1>
-          <p className="lead my-3">{this.state.object1.content}</p>
+          <p className="lead my-3">{this.state.object1.description}</p>
           <p>
             {/* note: ask ubeyt about href links&fetch! */}
             <a

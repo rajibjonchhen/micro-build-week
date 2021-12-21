@@ -26,8 +26,10 @@ export default class App extends React.Component {
         <MyNavBar />
         <MyCategory setSearchQuery={this.setSearchQuery} />
         <MyJumbotron />
-        <MyArticles searchQuery={this.state.searchQuery} />
-        <SideBar />
+        <div className="d-flex">
+          <MyArticles searchQuery={this.state.searchQuery} />
+          <SideBar />
+        </div>
         <MyFooter />
       </div>
     );
