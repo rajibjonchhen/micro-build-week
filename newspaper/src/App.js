@@ -1,5 +1,5 @@
 import React from "react";
-// import { Component } from "react";
+import { Component } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./MyCssCategory.css";
 import MyCategory from "./components/MyCategory";
@@ -7,10 +7,11 @@ import MyNavBar from "./components/MyNavBar";
 import MyArticles from "./components/MyArticles";
 import MyFooter from "./components/MyFooter";
 import MyJumbotron from "./components/MyJumbotron";
-import "./MyStyle.css";
-import "./App.css";
 import SideBar from "./components/SideBar";
 import MyPostContainer from './components/MyPostContainer'
+import {Container, Row, Col} from 'react-bootstrap'
+import "./MyStyle.css";
+import "./App.css";
 
 export default class App extends React.Component {
   state = {
@@ -24,14 +25,18 @@ export default class App extends React.Component {
   render() {
     return (
       <div className="App">
+        <div className="nav-category">
         <MyNavBar />
         <MyCategory setSearchQuery={this.setSearchQuery} />
+        </div>
+        <Container className="main d-flex mt-5">
+        <Row>
         <MyJumbotron />
         <MyPostContainer />
-        <div className="d-flex">
-          <MyArticles searchQuery={this.state.searchQuery} />
+          <MyArticles searchQuery={this.state.searchQuery} className="mt-5"/>
           <SideBar />
-        </div>
+        </Row>
+        </Container>
         <MyFooter />
       </div>
     );

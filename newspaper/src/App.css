@@ -47,3 +47,20 @@
 	overflow: hidden;
 	padding: 3px;
 }
+
+.jumbotron-img{
+  width:250px;
+
+}
+
+.jumbotron-img img{
+  object-fit: contain;
+
+}
+
+.post-container{
+height:450px;
+overflow:scroll;
+display: flex;
+
+}

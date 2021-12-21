@@ -14,12 +14,14 @@ class MyArticles extends React.Component {
     arrEnd: 4,
   };
 
+
+
+ 
+
   componentDidMount = async () => {
     try {
       let response = await fetch(
-        "https://newsapi.org/v2/everything?apiKey=0f004968c8634a11bc6de3a41b29c857&q=" +
-          this.state.search
-      );
+        "https://newsapi.org/v2/everything?apiKey=b05b2456108e40a9af9732b781e51033&q=" + this.state.search);
       let data = await response.json();
 
       if (data) {
@@ -35,32 +37,6 @@ class MyArticles extends React.Component {
       this.setState({ isloading: false });
       this.setState({ errorMsg: error });
       this.setState({ showError: true });
-    }
-  };
-
-  componentDidUpdate = async (prevProps) => {
-    if (this.props.searchQuery !== prevProps.searchQuery) {
-      try {
-        let response = await fetch(
-          "https://newsapi.org/v2/everything?apiKey=8bf3c85fe7f344f7b6eb4546ef9fa4cb&q=" +
-            this.state.search
-        );
-        let data = await response.json();
-
-        if (data) {
-          this.setState({ isLoading: false });
-          this.setState({ articles: data.articles });
-          this.setState({ numberOfArticles: data.articles.length });
-        } else {
-          this.setState({ isloading: false });
-          this.setState({ errorMsg: "error on loading articles" });
-          this.setState({ showError: true });
-        }
-      } catch (error) {
-        this.setState({ isloading: false });
-        this.setState({ errorMsg: error });
-        this.setState({ showError: true });
-      }
     }
   };
 

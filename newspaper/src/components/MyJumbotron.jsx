@@ -1,7 +1,6 @@
 import React from "react";
 import { Container, Jumbotron } from "react-bootstrap";
-import "./MyJumbotron.css";
-
+import '../App.css'
 export default class MyJumbotron extends React.Component {
   state = {
     // news: [],
@@ -31,19 +30,27 @@ export default class MyJumbotron extends React.Component {
     return (
       <Container>
         <Jumbotron className="p-5 bg-dark text-light">
-          <h1 className="text-white font-italic display-4">
+          <h2 className="text-white font-italic display-4">
             {this.state.object1.title}
-          </h1>
+          </h2>
+          <div className = "d-flex">
+
+          <div>
           <p className="lead my-3">{this.state.object1.description}</p>
           <p>
             {/* note: ask ubeyt about href links&fetch! */}
             <a
               href={`${this.state.object1.url}`}
               className="font-weight-bolder text-light"
-            >
+              >
               Continue reading..
             </a>
           </p>
+              </div>
+          <div>
+            <img className="jumbotron-img" src={this.state.object1.urlToImage}/>
+          </div>
+          </div>
         </Jumbotron>
       </Container>
     );
