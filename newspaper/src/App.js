@@ -10,6 +10,7 @@ import MyJumbotron from "./components/MyJumbotron";
 import "./MyStyle.css";
 import "./App.css";
 import SideBar from "./components/SideBar";
+import MyPostContainer from './components/MyPostContainer'
 
 export default class App extends React.Component {
   state = {
@@ -26,6 +27,7 @@ export default class App extends React.Component {
         <MyNavBar />
         <MyCategory setSearchQuery={this.setSearchQuery} />
         <MyJumbotron />
+        <MyPostContainer />
         <div className="d-flex">
           <MyArticles searchQuery={this.state.searchQuery} />
           <SideBar />
