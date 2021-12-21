@@ -1,18 +1,17 @@
-import React from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import MyNavBar from './components/MyNavBar.jsx'
-import { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "bootstrap/dist/css/bootstrap.min.css";
+import MyNavBar from "./components/MyNavBar.jsx";
+import "./App.css";
+import "./MyStyle.css";
 
 function App() {
   return (
     <div className="App">
-     <MyNavBar/>
-     <MyCategory/>
+      <MyNavBar />
+      {/*  <MyCategory/>
      <MyJumbotron/>
      <MyPostContainer/>
-     <MyArticles/>
+     <MyArticles/> */}
     </div>
   );
 }
