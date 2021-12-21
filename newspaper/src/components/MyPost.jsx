@@ -9,7 +9,7 @@ export default function MyPost() {
   const getData = async () => {
     try {
       let resp = await fetch(
-        "https://newsapi.org/v2/top-headlines?country=us&apiKey=b05b2456108e40a9af9732b781e51033"
+        "https://newsapi.org/v2/top-headlines?country=us&apiKey=9d962cc3acad4d38bc143f014aa7a258"
       );
       if (resp.ok) {
         let { articles } = await resp.json();
@@ -26,7 +26,7 @@ export default function MyPost() {
 
   useEffect(() => {
     getData();
-  });
+  }, []);
 
   return (
     <>

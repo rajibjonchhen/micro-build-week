@@ -5,7 +5,7 @@ import { compareAsc, format } from "date-fns";
 class MyArticles extends React.Component {
   state = {
     articles: [],
-    search: this.props.searchQuery ? this.props.searchQuery : "the world",
+    
     isLoading: true,
     showError: false,
     errorMsg: "",
@@ -18,10 +18,11 @@ class MyArticles extends React.Component {
 
  
 
-  componentDidMount = async () => {
+  fetchpost = async () => {
+    
     try {
       let response = await fetch(
-        "https://newsapi.org/v2/everything?apiKey=b05b2456108e40a9af9732b781e51033&q=" + this.state.search);
+        "https://newsapi.org/v2/everything?apiKey=9d962cc3acad4d38bc143f014aa7a258&q=" + this.props.searchQuery);
       let data = await response.json();
 
       if (data) {
@@ -37,8 +38,20 @@ class MyArticles extends React.Component {
       this.setState({ isloading: false });
       this.setState({ errorMsg: error });
       this.setState({ showError: true });
-    }
+    } 
   };
+
+
+  componentDidMount = async () => {
+  this.fetchpost()
+  };
+
+  componentDidUpdate = ( prevProps, prevState) => {
+    if(prevProps.searchQuery !== this.props.searchQuery){
+      this.fetchpost()
+    }
+  }
+
 
   nextArticles = (e) => {
     e.preventDefault();
