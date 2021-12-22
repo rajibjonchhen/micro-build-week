@@ -93,8 +93,12 @@ class MyArticles extends React.Component {
           </Alert>
         )}
         {/* loader and error handling ended */}
+        {/*  {this.state.activities
+            .sort(
+              (a, b) => new Date(a.date).getTime() - new Date(b.date).getTime()
+            ) */}
         {this.state.articles &&
-          this.state.articles
+          this.state.articles.sort((a,b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime())
             .slice(this.state.arrStart, this.state.arrEnd)
             .map((article, i) => <EachArticle key={i} article={article} />)}
         {/*  */}
