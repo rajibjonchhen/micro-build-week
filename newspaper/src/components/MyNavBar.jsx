@@ -1,70 +1,78 @@
-import {Navbar, Container, Nav, NavDropdown, Form, FormControl, Button} from 'react-bootstrap'
+import {
+  Navbar,
+  Container,
+  Nav,
+  Form,
+  FormControl,
+  Button,
+} from "react-bootstrap";
 
-const MyNavBar = () => {
-    return (
-        <>
-            <Navbar expand="lg" className='my-2'>
-                <Container>
-                    <div>
-                        <Nav
-                            className="me-auto my-2 my-lg-0 d-none d-md-flex"
-                            style={{ maxHeight: '100px' }}
-                            navbarScroll
-                        >
-                            <Nav.Link href="#action1">Subscribe</Nav.Link>
-                        </Nav>
-                    </div>
-                    
-                    <div className='d-flex justify-content-center'>
-                        <h1 href="#" className='mr-5 mr-lg-0'>Strive Times News</h1>
-                        <Navbar.Toggle aria-controls="navbarScroll" />
-                    </div>
+const MyNavBar = (props) => {
+  return (
+    <>
+      <Navbar expand="lg" className="my-2">
+        <Container>
+          <div>
+            <Nav
+              className="me-auto my-2 my-lg-0 d-none d-md-flex"
+              style={{ maxHeight: "100px" }}
+              navbarScroll
+            >
+              <Nav.Link href="#action1">Subscribe</Nav.Link>
+            </Nav>
+          </div>
 
-                    <div>
-                        <Navbar.Collapse id="navbarScroll">
-                            <Form className="d-block d-md-flex ml-auto">
-                                <span className='d-flex'>
-                                    <div className='d-flex align-items-center'>
-                                    <Form className="d-flex" style={{ maxWidth: '100px' }}>
-                                                <FormControl
-                                                    type="search"
-                                                    placeholder="Search"
-                                                    className="me-2 mr-1"
-                                                    aria-label="Search"
-                                                    onKeyDown={(e) => {this.handleInput(e)}}
-                                                    /* onKeyUp= {(e) => {this.passInputValue(e)}} */
-                                                />
-                                                {/* <Button variant="light">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-search mr-2" viewBox="0 0 16 16">
-                                                            <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
-                                                        
-                                                    </svg>
-                                                </Button> */}
-                                            </Form>        
-                                    </div>
-                                    <Button variant="outline-secondary">Sign up</Button>
-                                </span>
-                                
-                                <Nav
-                                    className="me-auto my-2 my-lg-0 d-block d-md-none"
-                                    style={{ maxHeight: '100px' }}
-                                    navbarScroll
-                                >
-                                    <Nav.Link href="#action1">Subscribe</Nav.Link>
-                                </Nav>
-                            </Form>
-                        </Navbar.Collapse>
-                    </div>
-                </Container>
-            </Navbar>
-            <Container>
-            <hr className='my-1'/>
-            </Container>
-            
-        </>
-    )
-        
-    
-}
+          <div className="d-flex justify-content-center">
+            <h1 href="#" className="mr-5 mr-lg-0">
+              Strive Times News
+            </h1>
+            <Navbar.Toggle aria-controls="navbarScroll" />
+          </div>
 
-export default MyNavBar
+          <div>
+            <Navbar.Collapse id="navbarScroll">
+              <div className="d-block d-md-flex ml-auto">
+                <span className="d-flex">
+                  <div className="d-flex align-items-center">
+                    <Form className="d-flex" style={{ maxWidth: "100px" }}>
+                      <FormControl
+                        type="search"
+                        placeholder="Search"
+                        className="me-2 mr-1"
+                        aria-label="Search"
+                        onChange={(e) => {
+                          this.props.handleInput(e.currentTarget.value);
+                          //console.log(e.currentTarget.value)
+                        }}
+                      />
+                      {/* <Button variant="light">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-search mr-2" viewBox="0 0 16 16">
+                                                                <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                                                            
+                                                        </svg>
+                                                    </Button> */}
+                    </Form>
+                  </div>
+                  <Button variant="outline-secondary">Sign up</Button>
+                </span>
+
+                <Nav
+                  className="me-auto my-2 my-lg-0 d-block d-md-none"
+                  style={{ maxHeight: "100px" }}
+                  navbarScroll
+                >
+                  <Nav.Link href="#action1">Subscribe</Nav.Link>
+                </Nav>
+              </div>
+            </Navbar.Collapse>
+          </div>
+        </Container>
+      </Navbar>
+      <Container>
+        <hr className="my-1" />
+      </Container>
+    </>
+  );
+};
+
+export default MyNavBar;
