@@ -16,12 +16,17 @@ import "./App.css";
 export default class App extends React.Component {
   state = {
     searchQuery: "",
+    url:""
   };
 
   setSearchQuery = (search) => {
     this.setState({ searchQuery: search });
     console.log(search);
   };
+
+  filterBy = (filter,filterValue) => {
+    this.setState({url:"https://newsapi.org/v2/top-headlines?&apiKey=0f004968c8634a11bc6de3a41b29c857&" + filter + "=" + filterValue})
+  }
   render() {
     return (
       <div className="App">
@@ -34,7 +39,7 @@ export default class App extends React.Component {
         <MyJumbotron />
         <MyPost />
           <MyArticles searchQuery={this.state.searchQuery || "the world"} className="mt-5"/>
-          <SideBar />
+          <SideBar filterBy={this.filterBy}/>
         </Row>
         </Container>
         <MyFooter />
