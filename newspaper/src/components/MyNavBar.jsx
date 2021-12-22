@@ -32,26 +32,17 @@ const MyNavBar = (props) => {
           <div>
             <Navbar.Collapse id="navbarScroll">
               <div className="d-block d-md-flex ml-auto">
-                <span className="d-flex">
-                  <div className="d-flex align-items-center">
-                    <Form className="d-flex" style={{ maxWidth: "100px" }}>
-                      <FormControl
-                        type="search"
-                        placeholder="Search"
-                        className="me-2 mr-1"
-                        aria-label="Search"
-                        onChange={(e) => {
-                          this.props.handleInput(e.currentTarget.value);
+                <span className="d-block d-md-flex">
+                  <div className="d-flex align-items-center search-box">
+                    <input className="search-input" type="text" name="" placeholder="Search" onChange={(e) => {
+                          props.handleInput(e.currentTarget.value);
                           //console.log(e.currentTarget.value)
-                        }}
-                      />
-                      {/* <Button variant="light">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-search mr-2" viewBox="0 0 16 16">
-                                                                <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
-                                                            
-                                                        </svg>
-                                                    </Button> */}
-                    </Form>
+                        }}/>
+                        <a href="#" class="search-btn">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-search mr-2" viewBox="0 0 16 16">
+                                <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>                                
+                            </svg>
+                        </a>     
                   </div>
                   <Button variant="outline-secondary">Sign up</Button>
                 </span>

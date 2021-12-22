@@ -16,7 +16,6 @@ import "./App.css";
 export default class App extends React.Component {
   state = {
     searchQuery: "",
-    inputSearch: "",
   };
 
   setSearchQuery = (search) => {
@@ -25,7 +24,7 @@ export default class App extends React.Component {
   };
 
   handleInput = (input) => {
-    this.setState({ inputSearch: input });
+    this.setState({ searchQuery: input });
     console.log(input);
   };
 
