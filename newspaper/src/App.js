@@ -16,7 +16,7 @@ import "./App.css";
 export default class App extends React.Component {
   state = {
     searchQuery: "",
-    url:"https://newsapi.org/v2/everything?q=bitcoin&apiKey=d22600ae7493498caf03a30df9b6bce6&q=keywords",
+    url:"https://newsapi.org/v2/everything?q=bitcoin&apiKey=d22600ae7493498caf03a30df9b6bce6&q=business",
   };
 
   setSearchQuery = (search) => {
@@ -25,7 +25,13 @@ export default class App extends React.Component {
   };
 
   filterBy = (filter,filterValue,searchBy) => {
-    this.setState({url: "https://newsapi.org/v2/everything?q=bitcoin&apiKey=d22600ae7493498caf03a30df9b6bce6&q=" + filterValue})
+  if ( filter == "country") {
+    this.setState({url: "https://newsapi.org/v2/top-headlines?apiKey=d22600ae7493498caf03a30df9b6bce6&q="+ filterValue})
+
+  } else {
+    this.setState({url: "https://newsapi.org/v2/everything?apiKey=d22600ae7493498caf03a30df9b6bce6&q="+ filterValue})
+
+  }
     this.setState({searchQuery:searchBy})
     console.log(filter)
     console.log(filterValue)
@@ -42,11 +48,11 @@ export default class App extends React.Component {
      
         
         <div className="App">
-        <Container className="main d-flex mt-5">
           <div className="nav-category">
           <MyNavBar handleInput={this.handleInput} />
           <MyCategory setSearchQuery={this.setSearchQuery} />
         </div>
+        <Container className="main d-flex mt-5">
         <Row>
             <MyJumbotron />
             <MyPost />

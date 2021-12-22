@@ -65,7 +65,7 @@ class SideBar extends Component {
             <ul className="list-unstyled mb-0">{
               this.publisherList.map((list,i) =>
                 <li className="mt-2 pointer" key={i}>
-                <a className = "pointer text-dark"onClick={(e)=>this.props.filterBy("q",list.id,list.name)}>{list.name}</a>
+                <a className = "pointer text-dark"onClick={(e)=>this.props.filterBy("q",list.id,list.name, true)}>{list.name}</a>
               </li>
               )
             }</ul>
@@ -75,7 +75,7 @@ class SideBar extends Component {
             <ul className="list-unstyled mb-0">{
               this.countries.map((country,i) =>
                 <li key={i} className="mt-2 pointer">
-                <a className = "pointer text-dark" onClick={(e)=>this.props.filterBy("country",country.id, country.country)}> <img className = "mr-1" src={country.img}/> {country.country}</a>
+                <a className = "pointer text-dark" onClick={(e)=>this.props.filterBy("country",country.id, country.country, true)}> <img className = "mr-1" src={country.img}/> {country.country}</a>
               </li>
               )
             }</ul>
