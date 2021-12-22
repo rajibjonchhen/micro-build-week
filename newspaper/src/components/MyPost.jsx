@@ -10,7 +10,7 @@ export default function MyPost() {
   const getData = async () => {
     try {
       let resp = await fetch(
-        "https://newsapi.org/v2/top-headlines?country=us&apiKey=d22600ae7493498caf03a30df9b6bce6"
+        "https://newsapi.org/v2/top-headlines?country=us&apiKey=31873307c9984b4c976a5c43d2ad6ebf"
       );
       if (resp.ok) {
         let { articles } = await resp.json();

@@ -16,20 +16,22 @@ import "./App.css";
 export default class App extends React.Component {
   state = {
     searchQuery: "",
-    url:"https://newsapi.org/v2/everything?q=bitcoin&apiKey=d22600ae7493498caf03a30df9b6bce6&q=business",
+    url:"https://newsapi.org/v2/everything?q=bitcoin&apiKey=31873307c9984b4c976a5c43d2ad6ebf&q=business",
   };
 
   setSearchQuery = (search) => {
-    this.setState({ searchQuery: search });
+    this.setState({ url: "https://newsapi.org/v2/top-headlines?apiKey=31873307c9984b4c976a5c43d2ad6ebf&q=" + search });
+    this.setState({searchQuery:search})
+    
     console.log(search);
   };
 
   filterBy = (filter,filterValue,searchBy) => {
   if ( filter == "country") {
-    this.setState({url: "https://newsapi.org/v2/top-headlines?apiKey=d22600ae7493498caf03a30df9b6bce6&q="+ filterValue})
+    this.setState({url: "https://newsapi.org/v2/top-headlines?apiKey=31873307c9984b4c976a5c43d2ad6ebf&q="+ filterValue})
 
   } else {
-    this.setState({url: "https://newsapi.org/v2/everything?apiKey=d22600ae7493498caf03a30df9b6bce6&q="+ filterValue})
+    this.setState({url: "https://newsapi.org/v2/everything?apiKey=31873307c9984b4c976a5c43d2ad6ebf&q="+ filterValue})
 
   }
     this.setState({searchQuery:searchBy})
@@ -39,7 +41,8 @@ export default class App extends React.Component {
     console.log(this.state.url)
   }
   handleInput = (input) => {
-    this.setState({ searchQuery: input });
+    this.setState({ url: "https://newsapi.org/v2/everything?apiKey=31873307c9984b4c976a5c43d2ad6ebf&q=" + input });
+    this.setState({searchQuery:"search result"})
     console.log(input);
   };
 
