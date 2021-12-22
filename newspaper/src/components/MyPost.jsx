@@ -36,7 +36,7 @@ export default function MyPost() {
       ) : ( */}
         <Container>
        
-        <Row className="post-container row-cols-1 row-cols-sm-1 row-cols-md-2 row-cols-lg-3 px-3 ">
+        <Row className="post-container row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 px-3 ">
           <>
           {
         data.map((post) => (
