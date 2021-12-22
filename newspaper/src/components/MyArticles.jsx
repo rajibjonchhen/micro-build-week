@@ -21,8 +21,7 @@ class MyArticles extends React.Component {
   fetchpost = async () => {
     
     try {
-      let response = await fetch(
-        "https://newsapi.org/v2/everything?apiKey=9d962cc3acad4d38bc143f014aa7a258&q=" + this.props.searchQuery);
+      let response = await fetch(this.props.url);
       let data = await response.json();
 
       if (data) {
@@ -72,7 +71,7 @@ class MyArticles extends React.Component {
     return (
       <Col sm={12} md={8} lg={8}>
         {/* Overall title of the article section */}
-        <p className="h2 text-left"> Top Stories from {this.props.searchQuery}</p>
+        <p className="h2 text-left"> Articles Based on {this.props.searchQuery}</p>
         <hr />
         {/* loader multiple spinner for colorful spinner :-D */}
         {this.state.isLoading && (
