@@ -1,0 +1,48 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display&family=Sofia&family=Varela&display=swap");
+
+:root {
+  --font-h1: "Playfair Display", serif;
+}
+
+h1 {
+  font-family: var(--font-h1);
+  font-size: 32px;
+  font-weight: bolder;
+}
+
+nav a:hover {
+  text-decoration: underline !important;
+}
+
+.search-box {
+  background: none;
+  height: 50px;
+  border-radius: 50px;
+  padding: 10px;
+}
+
+.search-btn {
+  color: black;
+  background: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.search-input {
+  border: none;
+  background: none;
+  outline: none;
+  float: left;
+  padding: 0;
+  color: black;
+  font-size: 20px;
+  transition: 0.4s;
+  line-height: 50px;
+  width: 0;
+}
+
+.search-box:hover > .search-input {
+  width: 250px;
+  padding: 0 7px;
+}

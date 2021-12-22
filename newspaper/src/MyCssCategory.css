@@ -1,0 +1,15 @@
+:root {
+  --grey-text: grey;
+}
+
+#nav-category li > a {
+  color: var(--grey-text);
+  padding: 20px;
+  display: inline;
+  text-transform: capitalize;
+}
+
+#nav-category li > a:hover {
+  text-decoration: underline !important;
+  color: var(--grey-text);
+}
