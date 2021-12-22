@@ -9,7 +9,7 @@ export default class MyJumbotron extends React.Component {
   componentDidMount = async () => {
     try {
       let response = await fetch(
-        "https://newsapi.org/v2/everything?q=politics&apiKey=0f004968c8634a11bc6de3a41b29c857"
+        "https://newsapi.org/v2/everything?q=politics&apiKey=d22600ae7493498caf03a30df9b6bce6"
       );
       console.log("THIS is the Response", response); //CHECK
       if (response.ok) {

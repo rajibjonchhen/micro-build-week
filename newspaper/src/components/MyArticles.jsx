@@ -46,7 +46,7 @@ class MyArticles extends React.Component {
   };
 
   componentDidUpdate = ( prevProps, prevState) => {
-    if(prevProps.searchQuery !== this.props.searchQuery){
+    if(prevProps.url !== this.props.url){
       this.fetchpost()
     }
   }

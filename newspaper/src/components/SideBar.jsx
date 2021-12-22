@@ -1,7 +1,7 @@
 import React from 'react'
 import { Component } from "react";
 import { Col } from "react-bootstrap";
-
+import '../App.css'
 class SideBar extends Component {
 
   publisherList = [
@@ -64,8 +64,8 @@ class SideBar extends Component {
             <h4 className="font-italic">Filter By Publisher</h4>
             <ul className="list-unstyled mb-0">{
               this.publisherList.map((list,i) =>
-                <li key={i}>
-                <a  className = "text-dark"onClick={(e)=>this.props.filterBy("q",list.id,list.name)}>{list.name}</a>
+                <li className="mt-2 pointer" key={i}>
+                <a className = "pointer text-dark"onClick={(e)=>this.props.filterBy("q",list.id,list.name)}>{list.name}</a>
               </li>
               )
             }</ul>
@@ -74,8 +74,8 @@ class SideBar extends Component {
             <h4 className="font-italic">Filter By Country</h4>
             <ul className="list-unstyled mb-0">{
               this.countries.map((country,i) =>
-                <li key={i} className="mt-2">
-                <a  className = "text-dark" onClick={(e)=>this.props.filterBy("country",country.id, country.country)}> <img className = "mr-1" src={country.img}/> {country.country}</a>
+                <li key={i} className="mt-2 pointer">
+                <a className = "pointer text-dark" onClick={(e)=>this.props.filterBy("country",country.id, country.country)}> <img className = "mr-1" src={country.img}/> {country.country}</a>
               </li>
               )
             }</ul>

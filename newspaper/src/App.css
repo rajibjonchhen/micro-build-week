@@ -72,3 +72,43 @@ display: flex;
 flex-wrap: nowrap;
 }
 
+.pointer{
+  cursor: pointer;
+
+}
+
+/* new features css */
+
+.post-container{
+  height:230px;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  display: flex;
+  flex-wrap:nowrap;
+  margin-bottom: 20px;
+  
+  }
+  .feature-image{
+   width:45%;
+    float:right;
+    height:200px;
+    object-fit: cover;
+    position:absolute;
+    right:0px;
+    margin-left:10px;
+  }
+  .feature-text{
+    width:55%;
+    position:absolute;
+    left:0px;
+    text-overflow:ellipsis;
+  
+  }
+  
+  .feature-name{
+  font-weight:bold;
+  color:green;
+  font-size:18px;
+  
+  }
+

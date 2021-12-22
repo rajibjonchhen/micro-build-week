@@ -16,7 +16,7 @@ import "./App.css";
 export default class App extends React.Component {
   state = {
     searchQuery: "",
-    url:"",
+    url:"https://newsapi.org/v2/everything?q=bitcoin&apiKey=d22600ae7493498caf03a30df9b6bce6&q=keywords",
   };
 
   setSearchQuery = (search) => {
@@ -25,7 +25,7 @@ export default class App extends React.Component {
   };
 
   filterBy = (filter,filterValue,searchBy) => {
-    this.setState({url: "https://newsapi.org/v2/top-headlines?&apiKey=0f004968c8634a11bc6de3a41b29c857&q=world"})//"https://newsapi.org/v2/top-headlines?&apiKey=0f004968c8634a11bc6de3a41b29c857&" + filter + "=" + filterValue})
+    this.setState({url: "https://newsapi.org/v2/everything?q=bitcoin&apiKey=d22600ae7493498caf03a30df9b6bce6&q=" + filterValue})
     this.setState({searchQuery:searchBy})
     console.log(filter)
     console.log(filterValue)
@@ -43,7 +43,7 @@ export default class App extends React.Component {
         <Row>
         <MyJumbotron />
         <MyPost />
-          <MyArticles url={this.state.url || "https://newsapi.org/v2/top-headlines?&apiKey=0f004968c8634a11bc6de3a41b29c857&q=keywords"} searchQuery={this.state.searchQuery || "the world"} className="mt-5"/>
+          <MyArticles url={this.state.url} searchQuery={this.state.searchQuery || "the world"} className="mt-5"/>
           <SideBar filterBy={this.filterBy}/>
         </Row>
         </Container>

@@ -10,7 +10,7 @@ export default function MyPost() {
   const getData = async () => {
     try {
       let resp = await fetch(
-        "https://newsapi.org/v2/top-headlines?country=us&apiKey=9d962cc3acad4d38bc143f014aa7a258"
+        "https://newsapi.org/v2/top-headlines?country=us&apiKey=d22600ae7493498caf03a30df9b6bce6"
       );
       if (resp.ok) {
         let { articles } = await resp.json();
@@ -35,15 +35,18 @@ export default function MyPost() {
         <span className="sr-only">Loading...</span>
       ) : ( */}
         <Container>
-       
-        <Row className="post-container row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 px-3 ">
+        <Row className="post-container row-cols-1  row-cols-md-2 row-cols-lg-2 p-0 m-0">
           <>
           {
-        data.map((post) => (
-            <Card className="feature-news" style={{width:"20rem"} } >
+        data.map((post,i) => (
+            <Card key={i} className="feature-news" style={{width:"18rem"} } >
               <Card.Img className="feature-image"variant="top" src={post.urlToImage} />
             <Card.Body className="feature-text">
+            <Card.Title className="feature-name">
+                    {post.source.name}
+                  </Card.Title>
               <Card.Title >{post.title}</Card.Title>
+              
               <Card.Text >{post.author}</Card.Text>
               <h6 >{post.description}</h6>
               <h6  >{post.url}</h6>
