@@ -8,8 +8,8 @@ import MyArticles from "./components/MyArticles";
 import MyFooter from "./components/MyFooter";
 import MyJumbotron from "./components/MyJumbotron";
 import SideBar from "./components/SideBar";
-import MyPost from './components/MyPost'
-import {Container, Row, Col} from 'react-bootstrap'
+import MyPost from "./components/MyPost";
+import { Container, Row, Col } from "react-bootstrap";
 import "./MyStyle.css";
 import "./App.css";
 
@@ -32,20 +32,27 @@ export default class App extends React.Component {
     console.log(searchBy)
     console.log(this.state.url)
   }
+  handleInput = (input) => {
+    this.setState({ searchQuery: input });
+    console.log(input);
+  };
+
   render() {
     return (
-      <div className="App">
-        <div className="nav-category">
-        <MyNavBar />
-        <MyCategory setSearchQuery={this.setSearchQuery} />
-        </div>
+     
+        
+        <div className="App">
         <Container className="main d-flex mt-5">
+          <div className="nav-category">
+          <MyNavBar handleInput={this.handleInput} />
+          <MyCategory setSearchQuery={this.setSearchQuery} />
+        </div>
         <Row>
-        <MyJumbotron />
-        <MyPost />
-          <MyArticles url={this.state.url} searchQuery={this.state.searchQuery || "the world"} className="mt-5"/>
+            <MyJumbotron />
+            <MyPost />
+            <MyArticles url={this.state.url} searchQuery={this.state.searchQuery || "the world"} className="mt-5"/>
           <SideBar filterBy={this.filterBy}/>
-        </Row>
+          </Row>
         </Container>
         <MyFooter />
       </div>
