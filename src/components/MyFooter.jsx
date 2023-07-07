@@ -17,7 +17,7 @@ class MyFooter extends React.Component {
                     <Col className="text-center">
                     <div>
                             <p>
-                            Blog template built for <a style={this.BlueText}>Bootstrap</a> by <a style={this.BlueText}>@mdo</a>.
+                            Blog template built for <a style={this.BlueText}>Bootstrap</a> by <a style={this.BlueText} href="https://github.com/rajibjonchhen?tab=repositories&q=micr&type=&language=&sort=" target="_blank">@rajibjonchhen</a>.
                             </p>
 
                             <p style={this.BlueText}>
