@@ -39,7 +39,7 @@ export default function MyPost() {
           <>
           {
         data.map((post,i) => (
-            <Card key={i} className="feature-news" style={{width:"18rem"} } >
+            <Card key={i} className="feature-news" style={{width:"40vw"} } >
               <Card.Img className="feature-image"variant="top" src={post.urlToImage} />
             <Card.Body className="feature-text">
             <Card.Title className="feature-name">

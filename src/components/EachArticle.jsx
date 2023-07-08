@@ -8,19 +8,17 @@ class EachArticle extends React.Component {
     render() {
         return <>{
            
-            <Card className='text-left mt-4' border="light" style={{height:"300px",overflow:"scroll"}}>
+            <Card className='text-left mt-4' border="light" style={{minHeight:"300px",overflow:"scroll"}}>
             <Card.Body>
-              <p className="h2">{this.props.article.title}</p>
+              <p className="h4">{this.props.article.title}</p>
               <span className="small m-2">{format(parseISO(this.props.article.publishedAt),'MMMM do yyyy')} {this.props.article.author}</span>
-              {/* <p className="mt-3" style={{textOverflow: 'ellipsis', whiteSpace: 'nowrap', overflow: 'hidden' }}>
-              {this.props.article.description}
-              </p> */}
             <hr/>
             
                 <div className="d-flex">
                 <span><img src={this.props.article.urlToImage} alt={this.props.article.title} style={{width:"10rem",margin:"10px"}}/></span>
              <p>
-              {this.props.article.content}
+              {this.props.article.content} 
+              <a href={this.props.article.url} target="_blank">read more</a>
               </p>
                 </div>
             </Card.Body>

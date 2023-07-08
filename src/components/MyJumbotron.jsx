@@ -36,7 +36,7 @@ export default class MyJumbotron extends React.Component {
           <div className = "d-flex">
 
           <div>
-          <p className="lead my-3">{this.state.object1.description}</p>
+          <p className="lead my-3"  dangerouslySetInnerHTML={{__html:this.state.object1.description}}   ></p>
           <p>
             {/* note: ask ubeyt about href links&fetch! */}
             <a
