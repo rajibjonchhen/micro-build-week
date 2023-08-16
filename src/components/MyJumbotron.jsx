@@ -28,8 +28,7 @@ export default class MyJumbotron extends React.Component {
 
   render() {
     return (
-      <Container>
-        <Jumbotron className="p-5 bg-dark text-light">
+      <Container className="p-5 bg-dark text-light">
           <h2 className="text-white font-italic display-4">
             {this.state.object1.title}
           </h2>
@@ -51,7 +50,6 @@ export default class MyJumbotron extends React.Component {
             <img className="jumbotron-img" src={this.state.object1.urlToImage}/>
           </div>
           </div>
-        </Jumbotron>
       </Container>
     );
   }

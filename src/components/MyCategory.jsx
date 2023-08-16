@@ -23,14 +23,14 @@ export default class MyCategory extends Component {
           <Nav
             defaultActiveKey="/home"
             as="ul"
-            className="d-flex justify-content-center py-4"
+            className="d-flex justify-content-center py-2"
           >
             <Nav.Item as="li">
               {/*  {console.log(this.state.categoryState)} */}
               {this.categories.map((category, i) => (
                 <Nav.Link key={i} onClick={() => this.passCategory(category)}>
-                  {" "}
-                  {category}{" "}
+                  
+                  {category}
                 </Nav.Link>
               ))}
             </Nav.Item>

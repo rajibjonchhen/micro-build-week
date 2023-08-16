@@ -4,7 +4,7 @@
 
 #nav-category li > a {
   color: var(--grey-text);
-  padding: 20px;
+  padding: 10px;
   display: inline;
   text-transform: capitalize;
 }
