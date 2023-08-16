@@ -22,9 +22,7 @@ export default class App extends React.Component {
   setSearchQuery = (search) => {
     this.setState({ url: "https://newsapi.org/v2/top-headlines?apiKey=31873307c9984b4c976a5c43d2ad6ebf&q=" + search });
     this.setState({searchQuery:search})
-    
-    console.log(search);
-  };
+      };
 
   filterBy = (filter,filterValue,searchBy) => {
   if ( filter == "country") {
@@ -35,15 +33,10 @@ export default class App extends React.Component {
 
   }
     this.setState({searchQuery:searchBy})
-    console.log(filter)
-    console.log(filterValue)
-    console.log(searchBy)
-    console.log(this.state.url)
   }
   handleInput = (input) => {
     this.setState({ url: "https://newsapi.org/v2/everything?apiKey=31873307c9984b4c976a5c43d2ad6ebf&q=" + input });
     this.setState({searchQuery:"search result"})
-    console.log(input);
   };
 
   render() {

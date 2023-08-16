@@ -18,7 +18,7 @@ export default class MyCategory extends Component {
 
   render() {
     return (
-      <div>
+    
         <Container id="nav-category">
           <Nav
             defaultActiveKey="/home"
@@ -36,7 +36,7 @@ export default class MyCategory extends Component {
             </Nav.Item>
           </Nav>
         </Container>
-      </div>
+
     );
   }
 }

@@ -23,6 +23,11 @@
   color: white;
 }
 
+.navbar{
+  position : sticky;
+  top : 0;
+}
+
 .App-link {
   color: #61dafb;
 }
