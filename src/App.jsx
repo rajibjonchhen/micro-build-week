@@ -44,11 +44,11 @@ export default class App extends React.Component {
      
         
         <div className="App">
-          <div className="nav-category">
+          <div className="header">
           <MyNavBar handleInput={this.handleInput} />
           <MyCategory setSearchQuery={this.setSearchQuery} />
         </div>
-        <Container className="main d-flex mt-5">
+        <Container className="main d-flex mt-2">
         <Row>
             <MyJumbotron />
             <MyPost />

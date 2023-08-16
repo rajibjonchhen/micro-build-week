@@ -8,7 +8,7 @@ import {
 const MyNavBar = (props) => {
   return (
     <>
-      <Navbar expand="lg" className="my-2">
+      <Navbar expand="lg" className="my-1">
         <Container>
           <div>
             <Nav
