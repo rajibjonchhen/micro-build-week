@@ -1,16 +1,15 @@
 import React from "react";
-import { Component } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import "./MyCssCategory.css";
-import MyCategory from "./components/MyCategory";
-import MyNavBar from "./components/MyNavBar";
-import MyArticles from "./components/MyArticles";
-import MyFooter from "./components/MyFooter";
-import MyJumbotron from "./components/MyJumbotron";
+import "./CssCategory.css";
+import Category from "./components/Category";
+import NavBar from "./components/NavBar";
+import Articles from "./components/Articles";
+import Footer from "./components/Footer";
+import Jumbotron from "./components/Jumbotron";
 import SideBar from "./components/SideBar";
-import MyPost from "./components/MyPost";
+import ScrollPosts from "./components/ScrollPosts";
 import { Container, Row, Col } from "react-bootstrap";
-import "./MyStyle.css";
+import "./Style.css";
 import "./App.css";
 
 export default class App extends React.Component {
@@ -45,18 +44,18 @@ export default class App extends React.Component {
         
         <div className="App">
           <div className="header">
-          <MyNavBar handleInput={this.handleInput} />
-          <MyCategory setSearchQuery={this.setSearchQuery} />
-        </div>
+            <NavBar handleInput={this.handleInput} />
+            <Category setSearchQuery={this.setSearchQuery} />
+          </div>
         <Container className="main d-flex mt-2">
-        <Row>
-            <MyJumbotron />
-            <MyPost />
-            <MyArticles url={this.state.url} searchQuery={this.state.searchQuery || "the world"} className="mt-5"/>
+          <Row>
+            <Jumbotron />
+            <ScrollPosts />
+            <Articles url={this.state.url} searchQuery={this.state.searchQuery || "the world"} className="mt-5"/>
           <SideBar filterBy={this.filterBy}/>
           </Row>
         </Container>
-        <MyFooter />
+        <Footer />
       </div>
     );
   }

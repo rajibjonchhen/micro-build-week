@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Container, Nav } from "react-bootstrap";
 
-export default class MyCategory extends Component {
+export default class Category extends Component {
   categories = [
     `business`,
     `entertainment`,

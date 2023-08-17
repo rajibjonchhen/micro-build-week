@@ -5,7 +5,7 @@ import {
   Button,
 } from "react-bootstrap";
 
-const MyNavBar = (props) => {
+const NavBar = (props) => {
   return (
     <>
       <Navbar expand="lg" className="my-1">
@@ -64,4 +64,4 @@ const MyNavBar = (props) => {
   );
 };
 
-export default MyNavBar;
+export default NavBar;

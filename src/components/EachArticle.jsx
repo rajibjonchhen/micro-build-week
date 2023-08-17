@@ -6,7 +6,7 @@ class EachArticle extends React.Component {
 
 
     render() {
-        return <>{
+        return (
            
             <Card className='text-left mt-4' border="light" style={{minHeight:"300px",overflow:"scroll"}}>
             <Card.Body>
@@ -23,9 +23,7 @@ class EachArticle extends React.Component {
                 </div>
             </Card.Body>
           </Card>
-              
-        }</>
-    }
+        )
+  }
 }
- 
 export default EachArticle

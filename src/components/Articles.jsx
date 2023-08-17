@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import EachArticle from "./EachArticle";
 import { Container, Row, Col, Spinner, Alert, Button } from "react-bootstrap";
 import { compareAsc, format } from "date-fns";
-class MyArticles extends React.Component {
+export default class Articles extends React.Component {
   state = {
     articles: [],
     
@@ -70,19 +70,12 @@ class MyArticles extends React.Component {
   render() {
     return (
       <Col sm={12} md={8} lg={8}>
-        {/* Overall title of the article section */}
         <p className="h2 text-left"> Articles Based on {this.props.searchQuery}</p>
         <hr />
-        {/* loader multiple spinner for colorful spinner :-D */}
+        {/* loading state */}
         {this.state.isLoading && (
           <div>
             <Spinner animation="grow" variant="primary" />
-            <Spinner animation="grow" variant="secondary" />
-            <Spinner animation="grow" variant="success" />
-            <Spinner animation="grow" variant="danger" />
-            <Spinner animation="grow" variant="warning" />
-            <Spinner animation="grow" variant="info" />
-            <Spinner animation="grow" variant="dark" />
           </div>
         )}
         {/* error handling */}
@@ -91,37 +84,32 @@ class MyArticles extends React.Component {
             {this.state.showError} Errror on Loading articles Cannot display
           </Alert>
         )}
-        {/* loader and error handling ended */}
-        {/*  {this.state.activities
-            .sort(
-              (a, b) => new Date(a.date).getTime() - new Date(b.date).getTime()
-            ) */}
+       
         {this.state.articles &&
           this.state.articles.sort((a,b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime())
             .slice(this.state.arrStart, this.state.arrEnd)
             .map((article, i) => <EachArticle key={i} article={article} />)}
-        {/*  */}
 
         <div className="text-left">
           <Button
             onClick={(e) => this.prevArticles(e)}
             style={{ borderRadius: "20px" }}
             variant="outline-primary"
+            disabled = {this.state.arrStart === 0}
           >
-            Older
+            Back
           </Button>
           <Button
             onClick={(e) => this.nextArticles(e)}
             className="ml-2"
             style={{ borderRadius: "20px" }}
             variant="outline-primary"
+            disabled = {this.state.numberOfArticles <= this.state.arrEnd}
           >
-            Newer
+            Next
           </Button>
         </div>
       </Col>
     );
   }
 }
-
-export default MyArticles;

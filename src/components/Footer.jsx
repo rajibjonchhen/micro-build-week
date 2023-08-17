@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {Container, Row, Col} from 'react-bootstrap'
 
-class MyFooter extends React.Component {
+class Footer extends React.Component {
 
     BlueText = {
         color:"rgb(1,123,254)",
@@ -31,4 +31,4 @@ class MyFooter extends React.Component {
     }
 }
  
-export default MyFooter;
+export default Footer;

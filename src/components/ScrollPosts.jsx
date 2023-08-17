@@ -3,7 +3,7 @@ import { Card, Container, Row } from "react-bootstrap";
 import React from "react";
 import '../App.css'
 
-export default function MyPost() {
+export default function ScrollPosts() {
   const [data, setData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
@@ -30,22 +30,17 @@ export default function MyPost() {
   }, []);
 
   return (
-    <>
-      {/* {isLoading ? (
-        <span className="sr-only">Loading...</span>
-      ) : ( */}
         <Container>
         <Row className="post-container row-cols-1  row-cols-md-2 row-cols-lg-2 p-0 m-0">
-          <>
           {
         data.map((post,i) => (
-            <Card key={i} className="feature-news" style={{width:"40vw"} } >
+            <Card key={i} className="feature-news" style={{maxWidth:"100vw", width : "100%"} } >
               <Card.Img className="feature-image"variant="top" src={post.urlToImage} />
             <Card.Body className="feature-text">
             <Card.Title className="feature-name">
                     {post.source.name}
                   </Card.Title>
-              <Card.Title >{post.title}</Card.Title>
+              <Card.Text >{post.title}</Card.Text>
               
               <Card.Text >{post.author}</Card.Text>
               <h6 >{post.description}</h6>
@@ -55,15 +50,9 @@ export default function MyPost() {
              
         ))
          } 
-
-
-</>
-         </Row>
-        
+         </Row>     
     </Container>
-      {/* )} */}
-    </>
-  );
+  )
 }
 
 
