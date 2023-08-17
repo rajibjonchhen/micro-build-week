@@ -8,7 +8,7 @@ class EachArticle extends React.Component {
     render() {
         return (
            
-            <Card className='text-left mt-4' border="light" style={{minHeight:"300px",overflow:"scroll"}}>
+            <Card className='text-left mt-4' border="light" style={{minHeight:"250px",overflow:"scroll"}}>
             <Card.Body>
               <p className="h4">{this.props.article.title}</p>
               <span className="small m-2">{format(parseISO(this.props.article.publishedAt),'MMMM do yyyy')} {this.props.article.author}</span>

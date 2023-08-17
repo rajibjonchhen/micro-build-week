@@ -21,6 +21,7 @@ export default class App extends React.Component {
   setSearchQuery = (search) => {
     this.setState({ url: "https://newsapi.org/v2/top-headlines?apiKey=31873307c9984b4c976a5c43d2ad6ebf&q=" + search });
     this.setState({searchQuery:search})
+    window.scrollTo(0,0)
       };
 
   filterBy = (filter,filterValue,searchBy) => {
@@ -32,6 +33,8 @@ export default class App extends React.Component {
 
   }
     this.setState({searchQuery:searchBy})
+    window.scrollTo(0,0)
+
   }
   handleInput = (input) => {
     this.setState({ url: "https://newsapi.org/v2/everything?apiKey=31873307c9984b4c976a5c43d2ad6ebf&q=" + input });
@@ -47,15 +50,15 @@ export default class App extends React.Component {
             <NavBar handleInput={this.handleInput} />
             <Category setSearchQuery={this.setSearchQuery} />
           </div>
-        <Container className="main d-flex mt-2">
-          <Row>
-            <Jumbotron />
-            <ScrollPosts />
-            <Articles url={this.state.url} searchQuery={this.state.searchQuery || "the world"} className="mt-5"/>
-          <SideBar filterBy={this.filterBy}/>
-          </Row>
-        </Container>
-        <Footer />
+          <Container className="main d-flex mt-2">
+            <Row>
+              <Jumbotron />
+              <ScrollPosts />
+              <Articles url={this.state.url} searchQuery={this.state.searchQuery || "the world"} className="mt-5"/>
+              <SideBar filterBy={this.filterBy}/>
+            </Row>
+          </Container>
+          <Footer />
       </div>
     );
   }

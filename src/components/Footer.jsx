@@ -20,8 +20,8 @@ class Footer extends React.Component {
                             Blog template built for <a style={this.BlueText}>Bootstrap</a> by <a style={this.BlueText}>@mdo</a>.
                             </p>
 
-                            <p style={this.BlueText}>
-                            <a href='back'> Back to top</a>
+                            <p style={this.BlueText} onClick = {() => window.scrollTo(0, 0) }>
+                             Back to top
                             </p>
                         </div>
                     </Col>

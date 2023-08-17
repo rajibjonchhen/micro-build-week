@@ -28,7 +28,7 @@ export default class Jumbotron extends React.Component {
 
   render() {
     return (
-      <Container className="p-5 bg-dark text-light">
+      <Container className="p-2 bg-dark text-light">
           <h2 className="text-white font-italic display-4">
             {this.state.object1.title}
           </h2>
